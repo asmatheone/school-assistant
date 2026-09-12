@@ -129,7 +129,7 @@ if question:
     with st.chat_message("user"):
         st.markdown(question)
 
-    try:
+     try:
         client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
         response = client.responses.create(
             model="gpt-5-mini",
@@ -137,10 +137,12 @@ if question:
             input=question,
         )
         answer = response.output_text.strip()
+
     except KeyError:
         answer = "لم يتم إعداد مفتاح OpenAI API بعد."
-  except Exception as e:
-    answer = f"ERROR: {str(e)}"
+
+    except Exception as e:
+        answer = f"ERROR: {str(e)}"
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
     with st.chat_message("assistant"):
