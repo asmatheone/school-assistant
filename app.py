@@ -132,7 +132,7 @@ if question:
     try:
         client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
         response = client.responses.create(
-            model="gpt-5.6-luna",
+            model="gpt-5-mini",
             instructions=SYSTEM_PROMPT,
             input=question,
         )
