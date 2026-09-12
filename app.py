@@ -67,6 +67,9 @@ SCHOOL_INFO = """
 1. حجز موعد رسمي مسبق.
 2. يتم الحجز عبر منصة مدرستي من خلال بوابة تواصل أو خدمة المواعيد.
 3. الحضور إلى المدرسة في الموعد المحدد والمسجل مسبقًا.
+
+اسم المدرسة
+   ابتدائية الرياض الثانية للبنات وابتدائية تحفيظ القرآن 17
 """
 
 SYSTEM_PROMPT = f"""
@@ -141,8 +144,8 @@ if question:
     except KeyError:
         answer = "لم يتم إعداد مفتاح OpenAI API بعد."
 
-    except Exception as e:
-        answer = f"ERROR: {str(e)}"
+    except Exception:
+    answer = "عذرًا، تعذر تشغيل المساعد حاليًا. يرجى المحاولة لاحقًا."
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
     with st.chat_message("assistant"):
