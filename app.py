@@ -139,8 +139,8 @@ if question:
         answer = response.output_text.strip()
     except KeyError:
         answer = "لم يتم إعداد مفتاح OpenAI API بعد."
-    except Exception:
-        answer = "عذرًا، تعذر تشغيل المساعد حاليًا. يرجى المحاولة لاحقًا."
+  except Exception as e:
+    answer = f"ERROR: {str(e)}"
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
     with st.chat_message("assistant"):
