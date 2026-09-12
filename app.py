@@ -129,7 +129,7 @@ if question:
     with st.chat_message("user"):
         st.markdown(question)
 
-     try:
+    try:
         client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
         response = client.responses.create(
             model="gpt-5-mini",
