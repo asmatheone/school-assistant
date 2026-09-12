@@ -145,7 +145,7 @@ if question:
         answer = "لم يتم إعداد مفتاح OpenAI API بعد."
 
     except Exception:
-    answer = "عذرًا، تعذر تشغيل المساعد حاليًا. يرجى المحاولة لاحقًا."
+        answer = "عذرًا، تعذر تشغيل المساعد حاليًا. يرجى المحاولة لاحقًا."
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
     with st.chat_message("assistant"):
